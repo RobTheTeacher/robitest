@@ -3,7 +3,7 @@ import { getHomePosts, HomePostType } from "@/utils/supabase/queries";
 import HomePosts from "../../components/Home/Posts";
 import Link from "next/link";
 
-export const revalidate = 60*10
+export const revalidate = 600
 export default async function Home () {
   const supabase = await createClient()
 
