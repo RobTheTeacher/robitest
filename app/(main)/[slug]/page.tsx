@@ -10,7 +10,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
 
     const supabase = await createClient()
     const { data: { user } } = await supabase.auth.getUser()
-    const isAuthor = user?.id === post?.user_id true: false;
+    const isAuthor = user?.id === post?.user_id ? true : false;
 
     console.log(user?.id)
 
