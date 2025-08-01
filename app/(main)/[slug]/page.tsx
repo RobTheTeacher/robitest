@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import DeleteButton from "./deleteButton";
 import Link from "next/link";
 
-const Post = async ({ params }: { params: { slug: string } }) => {
+const Post = async ({ params }: { params: Promise <{slug: string }>}) => {
     const { slug } = await params;
     const { data: post, error } = await getPost(slug)
     const date = post ? new Date(post.created_at).toISOString() : '';

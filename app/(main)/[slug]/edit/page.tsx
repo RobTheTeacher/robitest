@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server"
 import EditPostForm from "./form"
 import { notFound } from "next/navigation"
 
-const EditPostPage = async ({params}:{params:{slug:string}}) => {
+const EditPostPage = async ({params} : { params: Promise<{slug:string}>}) => {
     const {slug} = await params
     const supabase = await createClient()
 
